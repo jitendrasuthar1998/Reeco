@@ -1,0 +1,13 @@
+/* table{
+    width:80vw;
+} */
+
+table{
+    width: 100%;
+}
+
+td, th{
+    border-bottom:1px solid #ddd;
+    text-align: left;
+    padding:8px;
+}

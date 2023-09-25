@@ -1,0 +1,36 @@
+.orderDetailsContainer {
+  width: 90vw;
+  margin: 10px auto;
+  /* border: 1px solid red; */
+  background-color: whitesmoke;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.item {
+  flex: 1;
+  /* max-width: 300px;
+  min-width: 150px; */
+  padding-left: 30px;
+  height: 80px;
+}
+
+.item-header{
+    height:30px;
+    font-size: 12px;
+}
+
+.item-details{
+    height:50px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 90%;
+}
+
+.separator{
+    height:90px;
+    border:1px solid green;
+}
