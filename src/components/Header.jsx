@@ -1,5 +1,6 @@
 import React from "react";
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const Header = () => {
   return (
     <div
@@ -46,11 +47,12 @@ const Header = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           paddingLeft: "20px",
+          alignItems:"center"
         }}
       >
-        <div>Cart</div>
-        <div>
-          Hello, James <span></span>
+        <div><ShoppingCartIcon fontSize="small"/></div>
+        <div style={{display:"flex", alignItems:"center"}}>
+          Hello, James <span><KeyboardArrowDownIcon fontSize="small"/></span>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import ItemList from "./ItemList";
-
+import PrintIcon from '@mui/icons-material/Print';
 const ItemListContainer = () => {
   return (
     <div
@@ -58,7 +58,7 @@ const ItemListContainer = () => {
           >
             Add Item
           </div>
-          <div>Print</div>
+          <div><PrintIcon/></div>
         </div>
       </div>
       <ItemList/>

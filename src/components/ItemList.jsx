@@ -1,6 +1,9 @@
 import React from "react";
 import "./itemList.css";
 import items from "../data/items";
+import CheckIcon from '@mui/icons-material/Check';
+import ClearIcon from '@mui/icons-material/Clear';
+import AvocodoHass from '../images/avocadoHass.jpg';
 
 const ItemList = () => {
   return (
@@ -21,13 +24,17 @@ const ItemList = () => {
             {
                 items.map((item)=>(
                     <tr>
-                        <td>{item.name}</td>
+                        <td><img src={AvocodoHass} style={{height:"20px", width:"20px"}} alt="avocodo"/> {item.name}</td>
                         <td>{item.brand}</td>
                         <td>{item.price}</td>
                         <td>{item.quantity}</td>
                         <td>{item.total}</td>
                         <td>{item.status}</td>
-                        <td>{item.actions}</td>
+                        <td>
+                            <span className="icon-container"><CheckIcon fontSize="small"/></span>
+                            <span className="icon-container"><ClearIcon fontSize="small"/></span>
+                            <span>Edit</span>
+                        </td>
                     </tr>
                 ))
             }
