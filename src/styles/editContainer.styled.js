@@ -56,6 +56,7 @@ const Input = styled.input`
   border: 1px solid gray;
   height: 30px;
   border-radius: 10px;
+  text-align:center;
 `;
 
 const ItemTotalText = styled.div`
@@ -112,7 +113,9 @@ font-size: 14px;
 `;
 
 const TextHeading = styled.div`
-flex: 0.4, fontSize: 14px, color: black
+flex: 0.4; 
+fontSize: 14px; 
+color: black;
 `;
 
 const QtyInputBtnContainer = styled.div`
@@ -127,7 +130,7 @@ const QtyInputBtnContainer = styled.div`
   justify-content: space-between;
 `;
 
-const ItemTotalContainer = styled.div`
+const ItemRow = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -151,7 +154,7 @@ const SelectReasonOptionalTextContanier = styled.div`
   margin: 20px 10px 10px 10px;
 `;
 
-const BtnContainer = styled.div`
+const RightBtnContainer = styled.div`
   justify-content: flex-end;
   display: flex;
   height: 60px;
@@ -159,6 +162,29 @@ const BtnContainer = styled.div`
   font-size: 14px;
   padding-right: 10px;
 `;
+
+const CancelBtn = styled.div`
+color: green; cursor: pointer;
+`
+
+const SendBtn = styled.div`
+padding: 10px 30px;
+background-color: green;
+color: white;
+border-radius: 20px;
+margin-left: 20px;
+cursor: pointer;
+`
+const CloseIcon = styled.div`
+position: absolute;
+right: 20px;
+top: 20px;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+height: 30px;
+width: 30px;
+`
 
 const editContainerStyle = {
   MainContainer,
@@ -178,10 +204,13 @@ const editContainerStyle = {
   PriceInputContainer,
   SupportText,
   QtyInputBtnContainer,
-  ItemTotalContainer,
+  ItemRow,
   AllReasonsContainer,
   SelectReasonOptionalTextContanier,
-  BtnContainer
+  RightBtnContainer,
+  CancelBtn,
+  SendBtn,
+  CloseIcon
 };
 
 export default editContainerStyle;

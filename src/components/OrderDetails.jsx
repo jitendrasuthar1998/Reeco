@@ -1,7 +1,10 @@
 import React from "react";
-import "../styles/orderDetails.css";
 import { useSelector } from "react-redux";
 import category from "../images/category.png";
+
+import orderDetailsStyle from "../styles/orderDetails.styled";
+
+const {OrderDetailsContainer, Item, ItemHeader, ItemDetails, Separator} = orderDetailsStyle;
 
 const OrderDetails = () => {
 
@@ -10,37 +13,37 @@ const OrderDetails = () => {
   const orderTotal = orders.reduce((a, c) => a + c.quantity * c.price, 0);
 
   return (
-    <div className="order-details-container">
-      <div className="item">
-        <div className="item-header">Supplier</div>
-        <div className="item-details">East coast fruits & vegetables</div>
-      </div>
-      <div className="separator"></div>
-      <div className="item">
-        <div className="item-header">Shipping Date</div>
-        <div className="item-details">Thu, Feb 10</div>
-      </div>
-      <div className="separator"></div>
-      <div className="item">
-        <div className="item-header">Total</div>
-        <div className="item-details">$ {orderTotal.toFixed(2)}</div>
-      </div>
-      <div className="separator"></div>
-      <div className="item">
-        <div className="item-header">Category</div>
+    <OrderDetailsContainer>
+      <Item>
+        <ItemHeader>Supplier</ItemHeader>
+        <ItemDetails>East coast fruits & vegetables</ItemDetails>
+      </Item>
+      <Separator></Separator>
+      <Item>
+        <ItemHeader>Shipping Date</ItemHeader>
+        <ItemDetails>Thu, Feb 10</ItemDetails>
+      </Item>
+      <Separator></Separator>
+      <Item>
+        <ItemHeader>Total</ItemHeader>
+        <ItemDetails>$ {orderTotal.toFixed(2)}</ItemDetails>
+      </Item>
+      <Separator></Separator>
+      <Item>
+        <ItemHeader>Category</ItemHeader>
         <div><img src={category} style={{height:"50px", width:"200px"}}/></div>
-      </div>
-      <div className="separator"></div>
-      <div className="item">
-        <div className="item-header">Department</div>
-        <div className="item-details">300-444-678</div>
-      </div>
-      <div className="separator"></div>
-      <div className="item">
-        <div className="item-header">Status</div>
-        <div className="item-details">Awaiting your approval</div>
-      </div>
-    </div>
+      </Item>
+      <Separator></Separator>
+      <Item>
+        <ItemHeader>Department</ItemHeader>
+        <ItemDetails>300-444-678</ItemDetails>
+      </Item>
+      <Separator></Separator>
+      <Item>
+        <ItemHeader>Status</ItemHeader>
+        <ItemDetails>Awaiting your approval</ItemDetails>
+      </Item>
+    </OrderDetailsContainer>
   );
 };
 

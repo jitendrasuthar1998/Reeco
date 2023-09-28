@@ -1,8 +1,7 @@
 import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import "../styles/header.css";
-import headerStyle from "../styles/header.js";
+import headerStyle from "../styles/header.styled.js";
 
 const {
   HeaderContainer,
