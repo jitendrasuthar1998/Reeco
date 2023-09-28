@@ -1,14 +1,12 @@
 import styled from "@emotion/styled";
 
-
-
 const MainContainer = styled.div`
   border: 1px solid gray;
   border-radius: 20px;
   width: 600px;
   padding: 10px 10px;
   background-color: white;
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -56,11 +54,19 @@ const ItemPriceQtyContainer = styled.div`
 `;
 
 const Input = styled.input`
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  ::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  };
   width: 80px;
   border: 1px solid gray;
   height: 30px;
   border-radius: 10px;
-  text-align:center;
+  text-align: center;
 `;
 
 const ItemTotalText = styled.div`
@@ -117,9 +123,9 @@ font-size: 14px;
 `;
 
 const TextHeading = styled.div`
-flex: 0.4; 
-fontSize: 14px; 
-color: black;
+  flex: 0.4;
+  fontsize: 14px;
+  color: black;
 `;
 
 const QtyInputBtnContainer = styled.div`
@@ -168,27 +174,28 @@ const RightBtnContainer = styled.div`
 `;
 
 const CancelBtn = styled.div`
-color: green; cursor: pointer;
-`
+  color: green;
+  cursor: pointer;
+`;
 
 const SendBtn = styled.div`
-padding: 10px 30px;
-background-color: green;
-color: white;
-border-radius: 20px;
-margin-left: 20px;
-cursor: pointer;
-`
+  padding: 10px 30px;
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+`;
 const CloseIcon = styled.div`
-position: absolute;
-right: 20px;
-top: 20px;
-font-size: 18px;
-font-weight: bold;
-cursor: pointer;
-height: 30px;
-width: 30px;
-`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+`;
 
 const editContainerStyle = {
   MainContainer,
@@ -214,7 +221,7 @@ const editContainerStyle = {
   RightBtnContainer,
   CancelBtn,
   SendBtn,
-  CloseIcon
+  CloseIcon,
 };
 
 export default editContainerStyle;

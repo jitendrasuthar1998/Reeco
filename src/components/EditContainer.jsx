@@ -75,21 +75,11 @@ const EditContainer = (props) => {
   };
 
   const handlePriceChange = (e) => {
-    if (Number(e.target.value)) {
-      setPrice(e.target.value);
-    } else {
-      alert("Price can be only number");
-      return;
-    }
+    setPrice(e.target.value);
   };
 
   const handleQtyChange = (e) => {
-    if (Number(e.target.value && e.target.value > 0)) {
-      setQty(e.target.value);
-    } else {
-      alert("Quantity can be only number");
-      return;
-    }
+    setQty(e.target.value);
   };
 
 
@@ -100,6 +90,12 @@ const EditContainer = (props) => {
 
   // in this function, add changes to redux store.
   const handleSend = () => {
+
+    if(!price || !qty){
+      alert("Please enter any number in price or quantity ");
+      return;
+    }
+
     let obj = { id: item.id, qty: Number(qty) };
 
     if (item.quantity !== Number(qty)) {
@@ -162,6 +158,7 @@ const EditContainer = (props) => {
                 <Input
                   value={price}
                   name="price"
+                  type="number"
                   onChange={(e) => handlePriceChange(e)}
                 />
               </PriceInputContainer>
@@ -175,6 +172,7 @@ const EditContainer = (props) => {
                 <QtyBtn onClick={() => handleDecreaseQty(item)}>-</QtyBtn>
                 <Input
                   value={qty}
+                  type="number"
                   name="quantity"
                   onChange={(e) => handleQtyChange(e)}
                 />
