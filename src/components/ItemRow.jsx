@@ -79,7 +79,7 @@ const ItemRow = (props) => {
       </td>
       <td>{item.brand}</td>
       <td>${item.price} / 6+1LB</td>
-      <td>{item.quantity} *6+1LB</td>
+      <td><span style={{color:"black", fontWeight:"bold"}}>{item.quantity}</span> *6+1LB</td>
       <td>${item.price * item.quantity}</td>
       <td>
         <span

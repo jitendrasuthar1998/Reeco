@@ -10,6 +10,8 @@ const {
   AppName,
   CartAndUserNameContainer,
   UserName,
+  NavBtn,
+  CartIconContainer
 } = headerStyle;
 
 const Header = () => {
@@ -18,15 +20,15 @@ const Header = () => {
       <AppNameAndNavBtnContainer>
         <AppName>Reeco</AppName>
         <NavBtnContainer>
-          <span>Store</span>
-          <span>Orders</span>
-          <span>Analytics</span>
+          <NavBtn>Store</NavBtn>
+          <NavBtn>Orders</NavBtn>
+          <NavBtn>Analytics</NavBtn>
         </NavBtnContainer>
       </AppNameAndNavBtnContainer>
       <CartAndUserNameContainer>
-        <div>
+        <CartIconContainer>
           <ShoppingCartIcon fontSize="small" />
-        </div>
+        </CartIconContainer>
         <UserName>
           Hello, James{" "}
           <span>

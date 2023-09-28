@@ -29,24 +29,43 @@ const NavBtnContainer = styled.div`
   justify-content: space-between;
 `;
 
+const NavBtn = styled.span`
+  cursor: pointer;
+`;
+
 const AppName = styled.span`
-fontSize: 24px; 
-`
+  fontsize: 24px;
+`;
 const CartAndUserNameContainer = styled.div`
-width: 14%;
-          max-width:200px;
-          min-width:200px;
-          text-align: right;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding-left: 20px;
-          align-items:center
+  width: 14%;
+  max-width: 200px;
+  min-width: 200px;
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  align-items: center;
+`;
+
+const CartIconContainer = styled.span`
+cursor:pointer;
 `
 
 const UserName = styled.div`
-display:flex; align-items:center
-`
-const headerStyle = { HeaderContainer, AppNameAndNavBtnContainer, NavBtnContainer, AppName, CartAndUserNameContainer, UserName };
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+`;
+const headerStyle = {
+  HeaderContainer,
+  AppNameAndNavBtnContainer,
+  NavBtnContainer,
+  AppName,
+  CartAndUserNameContainer,
+  UserName,
+  NavBtn,
+  CartIconContainer
+};
 
 export default headerStyle;
