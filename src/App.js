@@ -1,5 +1,4 @@
 import './App.css';
-import EditContainer from './components/EditContainer';
 import Header from './components/Header';
 import ItemListContainer from './components/ItemListContainer';
 import OrderDetails from './components/OrderDetails';

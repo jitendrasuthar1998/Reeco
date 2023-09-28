@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 import { Modal } from "@mui/material";
 import EditContainer from "./EditContainer";
-import CheckIcon from "@mui/icons-material/Check";
-import ClearIcon from "@mui/icons-material/Clear";
 import MissingProduct from "./MissingProduct";
 import status from "../data/status";
-import { warning, danger, success } from "../styles/colors";
 import { useDispatch } from "react-redux";
 import { handleStatus } from "../orders-redux/orderSlice";
 import itemListStyle from "../styles/itemList.styled";
 
 const {
   Approved,
-  PriceUpdated,
-  QuantityUpdated,
-  QuantityPriceUpdated,
-  Missing,
-  MissingUrgent,
-  PriceNotSame,
-  QuantityNotSame,
-  Other,
 } = status;
 
-const { ItemImage, IconContainer } = itemListStyle;
+const { ItemImage, IconContainer, ItemStatus, RightIcon, CancelIcon, EditText, ItemQty } = itemListStyle;
 
 const ItemRow = (props) => {
   const { item } = props;
@@ -37,17 +26,6 @@ const ItemRow = (props) => {
     setMissingProductModal(value);
   };
 
-  const allStatus = [
-    Approved,
-    PriceUpdated,
-    QuantityUpdated,
-    QuantityPriceUpdated,
-    PriceNotSame,
-    QuantityNotSame,
-    Other,
-  ];
-
-  const status = item.status;
   const dispatch = useDispatch();
 
   const handleApprove = () => {
@@ -55,68 +33,37 @@ const ItemRow = (props) => {
     dispatch(handleStatus(statusObj));
   };
 
-  const getColor = (status) => {
-    let color = "";
-    if (allStatus.includes(status)) {
-      color = success;
-    } else if (status === Missing) {
-      color = warning;
-    } else if (status === MissingUrgent) {
-      color = danger;
-    }
-    return color;
-  };
-
   return (
-    <tr>
+    <tr key={item.id}>
       <td>
         <ItemImage src={item.img} alt="avocodo" /> {item.name}
       </td>
       <td>{item.brand}</td>
       <td>${item.price} / 6+1LB</td>
       <td>
-        <span style={{ color: "black", fontWeight: "bold" }}>
+        <ItemQty>
           {item.quantity}
-        </span>{" "}
+        </ItemQty>{" "}
         *6+1LB
       </td>
       <td>${item.price * item.quantity}</td>
       <td>
-        <span
-          style={{
-            padding: "10px 15px",
-            backgroundColor: getColor(status),
-            borderRadius: "20px",
-            fontSize: "14px",
-            color: "white",
-          }}
-        >
+        <ItemStatus status={item.status}>
           {item.status}
-        </span>
+        </ItemStatus>
       </td>
       <td>
         <IconContainer onClick={() => handleApprove()}>
-          <CheckIcon
-            fontSize="small"
-            style={{
-              color: allStatus.includes(status) ? getColor(status) : "",
-            }}
-          />
+          <RightIcon status={item.status}/>
         </IconContainer>
         <IconContainer onClick={() => handleMissingProductModal(true)}>
-          <ClearIcon
-            fontSize="small"
-            style={{
-              color: allStatus.includes(status) ? "" : getColor(status),
-            }}
-          />
+          <CancelIcon status={item.status}/>
         </IconContainer>
-        <span
+        <EditText
           onClick={() => handleEditModal(true)}
-          style={{ cursor: "pointer" }}
         >
           Edit
-        </span>
+        </EditText>
       </td>
 
       <Modal

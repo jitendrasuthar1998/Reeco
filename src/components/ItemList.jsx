@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import itemListStyle from "../styles/itemList.styled";
 
-const {ListContainer} = itemListStyle;
+const {ListContainer, Table} = itemListStyle;
 
 const ItemList = () => {
 
@@ -12,7 +12,7 @@ const ItemList = () => {
 
   return (
     <ListContainer>
-      <table>
+      <Table>
         <thead>
           <tr>
             <th>Product Name</th>
@@ -29,7 +29,7 @@ const ItemList = () => {
             <ItemRow item={item}/>
           ))}
         </tbody>
-      </table>
+      </Table>
     </ListContainer>
   );
 };

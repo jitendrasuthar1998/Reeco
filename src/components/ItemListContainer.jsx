@@ -1,7 +1,6 @@
 import React from "react";
 import ItemList from "./ItemList";
 import PrintIcon from "@mui/icons-material/Print";
-import "../styles/itemList.css";
 import itemListStyle from "../styles/itemList.styled";
 
 const {TableContainer, InputBtnContainer, InputContainer, Input, BtnsContainer, NewItemBtn} = itemListStyle;
