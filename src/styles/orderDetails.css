@@ -1,8 +1,8 @@
-.orderDetailsContainer {
+.order-details-container {
   width: 90vw;
-  margin: 10px auto;
-  /* border: 1px solid red; */
-  background-color: whitesmoke;
+  margin: 30px auto;
+  border: 1px solid #e9e8e8;
+  background-color: #fefffe;
   height: 120px;
   display: flex;
   flex-direction: row;
@@ -19,12 +19,12 @@
 }
 
 .item-header{
-    height:30px;
+    margin-bottom:15px;
+    color:#8d8c8c;
     font-size: 12px;
 }
 
 .item-details{
-    height:50px;
     font-size: 18px;
     font-weight: bold;
     width: 90%;
@@ -32,5 +32,5 @@
 
 .separator{
     height:90px;
-    border:1px solid green;
+    border:1px solid #f3f3f2;
 }

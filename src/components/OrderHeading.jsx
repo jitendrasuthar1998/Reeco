@@ -1,24 +1,24 @@
-import React from 'react'
+import React from "react";
+import "../styles/orderHeading.css";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const OrderHeading = () => {
   return (
-    <div style={{width:"100vw", padding:"10px 60px", backgroundColor:"aliceblue"}}>
-        <div style={{height:"35px", display:"flex", alignItems:"center"}}>
-            Order Order 32457ABC
+    <div className="order-heading-container">
+      <div className="order-heading-text">
+        Order{" "}
+        <ArrowForwardIosIcon style={{ fontSize: "12px", margin: "0px 5px" }} />{" "}
+        <span className="order-id">Order 32457ABC</span>
+      </div>
+      <div className="order-btn-and-title-container">
+        <h1>Order 32457ABC</h1>
+        <div className="order-btn-container">
+          <div className="back-button">Back</div>
+          <div className="approve-order-btn">Approve Order</div>
         </div>
-        <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", width:"100%"}}>
-            <h1>Order 32457ABC</h1>
-            <div style={{display:"flex", flexDirection:"row", justifyContent:"space-between", alignItems:"center", width:"20%", minWidth:"220px", maxWidth:"240px"}}>
-                <div style={{padding:"10px 20px", borderRadius:"20px", border:"1px solid green", backgroundColor:"white", color:"green", cursor:"pointer"}}>
-                    Back
-                </div>
-                <div style={{padding:"10px 20px", borderRadius:"20px", border:"1px solid green", backgroundColor:"green", color:"white", cursor:"pointer"}}>
-                    Approve Order
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default OrderHeading
+export default OrderHeading;
