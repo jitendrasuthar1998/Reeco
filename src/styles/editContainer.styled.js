@@ -1,13 +1,17 @@
 import styled from "@emotion/styled";
 
+
+
 const MainContainer = styled.div`
   border: 1px solid gray;
   border-radius: 20px;
   width: 600px;
-  margin: 200px auto;
   padding: 10px 10px;
   background-color: white;
-  position:relative;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const ItemNameAndBrandContainer = styled.div`

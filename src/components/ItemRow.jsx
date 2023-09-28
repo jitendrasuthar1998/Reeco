@@ -5,11 +5,10 @@ import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
 import MissingProduct from "./MissingProduct";
 import status from "../data/status";
-import {warning, danger, success} from "../styles/colors";
+import { warning, danger, success } from "../styles/colors";
 import { useDispatch } from "react-redux";
 import { handleStatus } from "../orders-redux/orderSlice";
 import itemListStyle from "../styles/itemList.styled";
-
 
 const {
   Approved,
@@ -23,7 +22,7 @@ const {
   Other,
 } = status;
 
-const {ItemImage, IconContainer} = itemListStyle;
+const { ItemImage, IconContainer } = itemListStyle;
 
 const ItemRow = (props) => {
   const { item } = props;
@@ -52,9 +51,9 @@ const ItemRow = (props) => {
   const dispatch = useDispatch();
 
   const handleApprove = () => {
-    let statusObj = { id: item.id, status: Approved }
+    let statusObj = { id: item.id, status: Approved };
     dispatch(handleStatus(statusObj));
-  }
+  };
 
   const getColor = (status) => {
     let color = "";
@@ -71,15 +70,16 @@ const ItemRow = (props) => {
   return (
     <tr>
       <td>
-        <ItemImage
-          src={item.img}
-          alt="avocodo"
-        />{" "}
-        {item.name}
+        <ItemImage src={item.img} alt="avocodo" /> {item.name}
       </td>
       <td>{item.brand}</td>
       <td>${item.price} / 6+1LB</td>
-      <td><span style={{color:"black", fontWeight:"bold"}}>{item.quantity}</span> *6+1LB</td>
+      <td>
+        <span style={{ color: "black", fontWeight: "bold" }}>
+          {item.quantity}
+        </span>{" "}
+        *6+1LB
+      </td>
       <td>${item.price * item.quantity}</td>
       <td>
         <span
@@ -95,7 +95,7 @@ const ItemRow = (props) => {
         </span>
       </td>
       <td>
-        <IconContainer  onClick={() => handleApprove()}>
+        <IconContainer onClick={() => handleApprove()}>
           <CheckIcon
             fontSize="small"
             style={{
@@ -103,7 +103,7 @@ const ItemRow = (props) => {
             }}
           />
         </IconContainer>
-        <IconContainer  onClick={() => handleMissingProductModal(true)}>
+        <IconContainer onClick={() => handleMissingProductModal(true)}>
           <ClearIcon
             fontSize="small"
             style={{
@@ -111,14 +111,29 @@ const ItemRow = (props) => {
             }}
           />
         </IconContainer>
-        <span onClick={() => handleEditModal(true)} style={{cursor:"pointer"}}>Edit</span>
+        <span
+          onClick={() => handleEditModal(true)}
+          style={{ cursor: "pointer" }}
+        >
+          Edit
+        </span>
       </td>
 
-      <Modal open={missingProductModal} onClose={() => handleEditModal(false)}>
+      <Modal
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        open={missingProductModal}
+        onClose={() => handleEditModal(false)}
+      >
         <MissingProduct id={item.id} handleModal={handleMissingProductModal} />
       </Modal>
 
-      <Modal open={editModalOpen} onClose={() => handleEditModal(false)}>
+      <Modal
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        open={editModalOpen}
+        onClose={() => handleEditModal(false)}
+      >
         <EditContainer id={item.id} handleModal={handleEditModal} />
       </Modal>
     </tr>

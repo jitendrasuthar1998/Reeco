@@ -4,7 +4,10 @@ const MissingProductContainer = styled.div`
   border: 1px solid gray;
   width: 500px;
   background-color: white;
-  margin: 400px auto;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 20px;
   position: relative;
@@ -14,6 +17,7 @@ const Button = styled.div`
   font-size: 18px;
   font-weight: bold;
   color: black;
+  cursor:pointer;
 `;
 
 const CloseIcon = styled.span`
