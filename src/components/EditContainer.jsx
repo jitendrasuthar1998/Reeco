@@ -111,6 +111,8 @@ const EditContainer = (props) => {
       dispatch(handlePrice(obj));
     }
 
+    handleModal(false)
+
     let statusObj = { id: item.id, status: QuantityPriceUpdated };
     if (item.price !== price && item.quantity !== qty) {
       statusObj.status = QuantityPriceUpdated;
