@@ -3,6 +3,7 @@ import status from "../data/status";
 import { warning, danger, success } from "../styles/colors";
 import CheckIcon from "@mui/icons-material/Check";
 import ClearIcon from "@mui/icons-material/Clear";
+import SearchIcon from '@mui/icons-material/Search';
 
 const {
   Approved,
@@ -115,19 +116,26 @@ const InputBtnContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const InputContainer = styled.div`
-  height: 30px;
-  width: 200px;
-  border-radius: 10px;
-  border: 1px solid gray;
+const InputContainer = styled.form`
+width:200px; border:1px solid gray; border-radius:25px; position:relative; height:100%;
+height:40px;
+padding-left:5px;
 `;
 
-const Input = styled.input`
+const SearchInput = styled.input`
   border: none;
-  padding: 5px 10px;
+  padding: 10px 30px;
   outline: none;
   background-color: transparent;
 `;
+
+const SearchIconContainer = styled.button`
+position:absolute; background:none; border:none; left:5; top:0; display:flex; flex-direction:row; justify-content:center; align-items:center; height:100%;
+`
+
+const Search = styled(SearchIcon)`
+font-size:18px;
+`
 
 const BtnsContainer = styled.div`
   display: flex;
@@ -179,7 +187,7 @@ const itemListStyle = {
   TableContainer,
   InputBtnContainer,
   InputContainer,
-  Input,
+  SearchInput,
   BtnsContainer,
   NewItemBtn,
   ItemImage,
@@ -189,7 +197,9 @@ const itemListStyle = {
   RightIcon,
   CancelIcon,
   EditText,
-  ItemQty
+  ItemQty,
+  SearchIconContainer,
+  Search
 };
 
 export default itemListStyle;

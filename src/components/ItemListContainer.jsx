@@ -3,14 +3,24 @@ import ItemList from "./ItemList";
 import PrintIcon from "@mui/icons-material/Print";
 import itemListStyle from "../styles/itemList.styled";
 
-const {TableContainer, InputBtnContainer, InputContainer, Input, BtnsContainer, NewItemBtn} = itemListStyle;
+const {
+  TableContainer,
+  InputBtnContainer,
+  InputContainer,
+  SearchInput,
+  BtnsContainer,
+  NewItemBtn,
+  SearchIconContainer,
+  Search
+} = itemListStyle;
 
 const ItemListContainer = () => {
   return (
     <TableContainer>
       <InputBtnContainer>
         <InputContainer>
-          <Input placeholder="Search.." />
+            <SearchInput placeholder="Search.." />
+            <SearchIconContainer><Search fontSize="small"/></SearchIconContainer>
         </InputContainer>
         <BtnsContainer>
           <NewItemBtn>Add Item</NewItemBtn>
