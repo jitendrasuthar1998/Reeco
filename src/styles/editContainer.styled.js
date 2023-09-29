@@ -74,6 +74,7 @@ const ItemTotalText = styled.div`
   font-size: 14px;
   color: black;
 `;
+
 const ItemTotalValue = styled.div`
   flex: 0.6;
   display: flex;
@@ -119,12 +120,11 @@ justify-content: center;
 align-items: center;
 margin-left: -30px;
 font-size: 14px;
-}
 `;
 
 const TextHeading = styled.div`
   flex: 0.4;
-  fontsize: 14px;
+  font-size: 14px;
   color: black;
 `;
 
@@ -186,6 +186,7 @@ const SendBtn = styled.div`
   margin-left: 20px;
   cursor: pointer;
 `;
+
 const CloseIcon = styled.div`
   position: absolute;
   right: 20px;

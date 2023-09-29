@@ -69,17 +69,17 @@ const EditContainer = (props) => {
   };
 
   const handleDecreaseQty = (item) => {
-    if (qty !== 0) {
+    if (qty > 0) {
       setQty(qty - 1);
     }
   };
 
   const handlePriceChange = (e) => {
-    setPrice(e.target.value);
+    setPrice(Number(e.target.value));
   };
 
   const handleQtyChange = (e) => {
-    setQty(e.target.value);
+    setQty(Number(e.target.value));
   };
 
 
@@ -184,7 +184,7 @@ const EditContainer = (props) => {
           <ItemRow>
             <ItemTotalText>Total</ItemTotalText>
             <ItemTotalValue>
-              <span>${price * qty}</span>
+              <span>${(price * qty).toFixed(2)}</span>
             </ItemTotalValue>
           </ItemRow>
         </ItemPriceQtyContainer>

@@ -34,7 +34,7 @@ const NavBtn = styled.span`
 `;
 
 const AppName = styled.span`
-  fontsize: 24px;
+  font-size: 24px;
 `;
 const CartAndUserNameContainer = styled.div`
   width: 14%;
